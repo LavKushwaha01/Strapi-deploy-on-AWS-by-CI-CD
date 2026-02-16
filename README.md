@@ -60,15 +60,15 @@ AWS EC2 (Public IP)
 
 Add the following secrets to your GitHub repository:
 
-Docker Hub
-DOCKERHUB_USERNAME = <your_dockerhub_username>
-DOCKERHUB_TOKEN    = <dockerhub_access_token>
-DOCKERHUB_REPO     = <your_dockerhub_username>/strapi-app
+### Docker Hub
+- DOCKERHUB_USERNAME = <your_dockerhub_username>
+- DOCKERHUB_TOKEN    = <dockerhub_access_token>
+- DOCKERHUB_REPO     = <your_dockerhub_username>/strapi-app
 
-AWS
-AWS_ACCESS_KEY_ID     = <your_aws_access_key>
-AWS_SECRET_ACCESS_KEY = <your_aws_secret_key>
-AWS_REGION            = us-east-1
+### AWS
+- AWS_ACCESS_KEY_ID     = <your_aws_access_key>
+- AWS_SECRET_ACCESS_KEY = <your_aws_secret_key>
+- AWS_REGION            = us-east-1
 
 ---
 
