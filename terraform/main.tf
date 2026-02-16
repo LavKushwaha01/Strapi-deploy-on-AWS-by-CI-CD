@@ -8,7 +8,7 @@ resource "aws_instance" "first_ec2_from_terraform" {
   iam_instance_profile = "ec2-ecr-role"
 
 root_block_device {
-    volume_size = 20   # GB (safe within Free Tier)
+    volume_size = 20   
     volume_type = "gp3"
   }
  user_data = <<-EOF
