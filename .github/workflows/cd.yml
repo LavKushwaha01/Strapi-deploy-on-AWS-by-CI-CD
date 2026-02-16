@@ -6,6 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./terraform
 
     steps:
       - name: Checkout repo
@@ -20,23 +23,22 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.0
 
       - name: Terraform Init
-        run: |
-         cd Terraform
-         terraform init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
 
       - name: Terraform Plan
         run: |
-         cd Terraform
-         terraform plan \
-         -var="image_tag=${{ github.sha }}" \
-         -var="ecr_repo=${{ secrets.ECR_REPO }}"
+          terraform plan \
+            -var="ecr_repo=${{ secrets.ECR_REPO }}" \
+            -var="image_tag=${{ github.sha }}" \
+            -out=tfplan
 
       - name: Terraform Apply
         run: |
-         cd Terraform
-         terraform apply -auto-approve \
-         -var="image_tag=${{ github.sha }}" \
-         -var="ecr_repo=${{ secrets.ECR_REPO }}"
-  
+          terraform apply -auto-approve tfplan
