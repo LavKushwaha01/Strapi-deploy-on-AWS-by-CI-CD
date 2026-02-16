@@ -43,5 +43,5 @@ jobs:
       - name: Terraform Destroy
         run: |
           terraform destroy -auto-approve -input=false \
-            -var="ecr_repo=${{ secrets.ECR_REPO }}" \
-            -var="image_tag=${{ github.sha }}"
+            -var="dockerhub_repo=${{ secrets.DOCKERHUB_REPO }}" \
+            -var="image_tag=latest"
