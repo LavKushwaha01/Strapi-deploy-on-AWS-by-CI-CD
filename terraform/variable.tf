@@ -15,9 +15,12 @@ variable "environment" {
   default = "prod"
   description = "Environment tag"
 }
-variable "ecr_repo" {
-  type = string
+variable "dockerhub_repo" {
+  type        = string
+  description = "Docker Hub repo (e.g., username/strapi-app)"
 }
+
 variable "image_tag" {
-  type = string
+  type        = string
+  description = "Docker image tag"
 }

@@ -28,12 +28,8 @@ root_block_device {
   systemctl start docker
   systemctl enable docker
 
-  # Login to ECR using IAM Role
-  aws ecr get-login-password --region us-east-1 \
-  | docker login --username AWS --password-stdin ${var.ecr_repo}
-
   # Pull latest image
-  docker pull ${var.ecr_repo}:${var.image_tag}
+  docker pull ${var.dockerhub_repo}:${var.image_tag}
 
   # Stop old container if exists
   docker rm -f strapi-app || true
@@ -43,7 +39,7 @@ root_block_device {
     --restart unless-stopped \
     -p 1337:1337 \
     --name strapi-app \
-    ${var.ecr_repo}:${var.image_tag}
+    ${var.dockerhub_repo}:${var.image_tag}
 EOF
 
 

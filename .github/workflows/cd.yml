@@ -35,10 +35,9 @@ jobs:
       - name: Terraform Plan
         run: |
           terraform plan -input=false \
-            -var="ecr_repo=${{ secrets.ECR_REPO }}" \
+            -var="dockerhub_repo=${{ secrets.DOCKERHUB_REPO }}" \
             -var="image_tag=${{ github.sha }}" \
             -out=tfplan
 
       - name: Terraform Apply
-        run: |
-          terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve tfplan
