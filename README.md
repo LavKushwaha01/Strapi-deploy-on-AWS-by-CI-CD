@@ -1,1 +1,1 @@
-# Strapi-deploy-on-AWS-by-CI-CD
+# Strapi-deploy-on-AWS-by-CI-CD.
