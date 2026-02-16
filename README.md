@@ -1,5 +1,7 @@
 # CI/CD Pipeline for Strapi Deployment (Docker Hub + Terraform + AWS EC2)
 
+Loom video: https://www.loom.com/share/7d6261e67d804bc2be26079474ad396b
+
 ## Overview
 
 This project implements a complete CI/CD pipeline to automate the build and deployment of a Strapi application using:
@@ -36,7 +38,7 @@ AWS EC2 (Public IP)
   - Strapi accessible on port 1337
 
 ## Repository Structure
-.
+```bash
 ├── Docker/
 │   ├── Dockerfile
 │   └── .dockerignore
@@ -52,6 +54,7 @@ AWS EC2 (Public IP)
 │       ├── cd.yml              # CD: Terraform deploy
 │       └── destroy.yml         # Destroy: Terraform destroy
 └── README.md
+```
 
 ## Required GitHub Secrets
 
