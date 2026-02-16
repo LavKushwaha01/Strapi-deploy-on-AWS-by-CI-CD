@@ -8,7 +8,7 @@ variable "key_name" {
 }
 variable "ports" {
       type = list(number)
-  
+      default = [22, 80, 443, 1337]
 }
 variable "environment" {
   type = string
