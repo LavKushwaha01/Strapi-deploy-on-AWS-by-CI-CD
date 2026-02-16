@@ -15,11 +15,6 @@ variable "environment" {
   default = "prod"
   description = "Environment tag"
 }
-
-variable "docker_images" {
-  type = string
-   description = "ECR image URI"
-}
 variable "ecr_repo" {
   type = string
 }

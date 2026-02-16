@@ -34,7 +34,7 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          terraform plan \
+          terraform plan -input=false \
             -var="ecr_repo=${{ secrets.ECR_REPO }}" \
             -var="image_tag=${{ github.sha }}" \
             -out=tfplan
